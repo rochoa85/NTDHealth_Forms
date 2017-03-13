@@ -1,0 +1,227 @@
+﻿<htmlform formUuid="ab215dd2-59ff-11e4-af12-660e112eb3f5" formName="Datos adicionales" formEncounterType="83413734-587d-11e4-af12-660e112eb3f5" formVersion="0.1">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Additional patient data form in spanish for the NTDHealth implementation">
+        <meta name="keywords" content="Epidemiological, Patient, OpenMRS, NTDHealth, HTML Form">
+        <meta name="author" content="Program for Study and Control of Tropical Diseases -PECET, University of Antioquia, Colombia">
+    </head>
+
+    <style type="text/css">
+    <ifMode mode="VIEW" include="false">
+        #data-collection {
+            display: inline-block;
+            width: 48%;
+            vertical-align: top;
+        }
+        
+        #vital-personal {
+            display: inline-block;
+            width: 48%;
+            vertical-align: top;
+        }
+
+        #encounter-diagnoses-target {
+            display: inline-block;
+            width: 40%;
+            vertical-align: top;
+        }
+        
+        #encounter-diagnoses-app {
+            margin-bottom: 20px;
+        }
+    </ifMode>
+    </style>
+
+
+    <h1>Datos adicionales del paciente</h1>
+    <p>En este formulario se ingresará información adicional del paciente al igual que datos epidemiológicos que ayuden a la interpretación médica</p>
+
+    <div id="vital-personal">
+        <p class="left">
+            <h2>Fecha</h2>
+            <encounterDate default="now"/>
+        </p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <h2>Lugar de la consulta</h2>
+            <encounterLocation default="SessionAttribute:emrContext.sessionLocationId"/>
+        </p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <h2>Profesional</h2>
+            <encounterProvider default="currentUser" required="true"/>
+        </p>
+    </div>
+    <p></p>
+
+
+    <!--################### PERSONAL DATA SECTION ########################-->
+    <section id="signsAndObs" sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Datos personales adicionales">
+
+
+    <h2>Datos adicionales del paciente</h2>
+    <div id="vital-personal">
+        <p class="left">
+            <label>Código de identificación en el proyecto</label>
+            <obs conceptId="CIEL:162576" id="proy_id"/>
+        </p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <label>Raza</label>
+            <obs conceptId="CIEL:163153" answerLabel=""/>
+        </p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <label>Nivel de estudios</label>
+            <obs conceptId="CIEL:1712" answerLabel=""/>
+            
+        </p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <label>Número de hijos</label>
+            <obs conceptId="CIEL:1825" id="hijos"/>
+        </p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <label>Nacionalidad</label>
+            <obs conceptId="CIEL:163359"/> <!-- NEW CONCEPT -->
+        </p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <label>Dirección de residencia principal</label>
+            <obs conceptId="CIEL:162725"/>
+        </p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <label>Regimen de salud</label>
+            <obs conceptId="CIEL:5282" answerLabel=""/>
+        </p>
+    </div>
+
+    <p></p>
+    <h2>Acompañante</h2>
+
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:969" labelText="Familiar que acompaña al paciente"/></p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <label>Nombre del acompañante</label>
+            <obs conceptId="CIEL:160750" id="nombre_acomp"/>
+        </p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <label>Telefono del acompañante</label>
+            <obs conceptId="CIEL:159635" id="telefono_acomp"/>
+        </p>
+    </div>
+
+
+    <div id="vital-personal">
+        <p class="left">
+            <label>Si el acompañante no es familiar, ¿cuál es su relación con el paciente?</label>
+            <obs conceptId="CIEL:163362" id="relacion"/> <!-- NEW CONCEPT -->
+        </p>
+    </div>
+
+
+    <p></p>
+    <h2>Menor de edad</h2>
+
+    <obsgroup groupingConceptId="CIEL:162702"> <!-- CUIDADO -->
+    <div id="vital-personal">
+        <obs conceptId="CIEL:1729" labelText="¿El paciente es menor de edad?"/>
+    </div>
+ 
+    <div id="vital-personal">
+        <label>Nombre del responsable</label>
+        <obs conceptId="CIEL:163258" id="nombre_resp"/>
+    </div>
+ 
+    <div id="vital-personal">
+        <label>Teléfono del responsable</label>
+        <obs conceptId="CIEL:159635" id="telefono_resp"/>
+    </div>
+ 
+    <div id="vital-personal">
+        <label>Parentezco</label> 
+        <obs conceptId="CIEL:969" id="parentesco_resp"/>
+    </div>  
+    </obsgroup>
+    </section>
+    <p></p>
+
+    <!--################### EPIDEMIOLOGICAL DATA SECTION ########################-->
+    <section id="signsAndObs" sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Datos epidemiológicos">
+ 
+        <div id="vital-personal">
+        <p class="left">
+            <obsgroup groupingConceptId="CIEL:162619">
+                <ul><br><obs conceptId="CIEL:1729" answerLabel="" labelText="Viajes recientes?"/></br></ul>
+                <ul><br>
+                    <td style="white-space:nowrap;">
+                        <obs conceptId="CIEL:163191" answerLabel="" labelText="¿Hace cuanto tiempo viajó?"/><obs conceptId="CIEL:1732" answerLabel=""/>
+                    </td>
+                </br></ul>
+                <ul><br>
+                    <label>Fecha exacta (si esta disponible)</label>
+                    <obs conceptId="CIEL:163364" id="fecha_viaje"/> <!-- NEW CONCEPT -->
+                </br></ul>
+            </obsgroup>
+        </p>
+    
+        <p class="left">
+            <label>De las personas que viven en la misma residencia principal, en los últimos 5 a 7 días: </label>
+            <label>¿cuántas presentan síntomas similares?</label>
+            <obs conceptId="CIEL:1907" labelText=""/>
+           
+            <label>Quién?</label>
+            <obs conceptId="CIEL:1560" id="quien_enfermo"/>
+            <obs conceptId="CIEL:1560" id="quien_enfermo"/>
+            <obs conceptId="CIEL:1560" id="quien_enfermo"/>
+        </p>
+
+
+        <obsgroup groupingConceptId="CIEL:162603">
+            <p class="left">
+               <label>De las 7 noches previas a que empezaran los síntomas, cuantas noches durmió en algún lugar diferente a la residencia referida previamente?</label>
+               <obs conceptId="CIEL:163191" id="noches_diferente"/>
+            </p>
+            <p class="left">
+               <label>Dirección de residencia secundaria donde permaneció esas noches</label>
+               <obs conceptId="CIEL:162725" id="noches_diferente"/>
+            </p>
+            <p class="left">
+                <label>Durante los 7 días previos al inicio de los síntomas, cuánto tiempo pasó en la residencia principal, durante el día (6am a 6pm)</label>
+            </p>
+            <p class="left">
+                <label>Días en semana:</label>
+                <obs conceptId="CIEL:163363" answerLabel=""/> <!-- NEW CONCEPT -->
+                <label>Días en fin de semana:</label>
+                <obs conceptId="CIEL:163363" answerLabel=""/> <!-- NEW CONCEPT -->
+            </p>
+        </obsgroup>
+        </div>
+    </section>
+    <submit/>
+</htmlform>

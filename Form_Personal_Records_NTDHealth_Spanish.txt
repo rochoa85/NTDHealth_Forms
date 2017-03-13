@@ -1,0 +1,335 @@
+﻿<htmlform formUuid="ab215dd2-59ff-11e4-af12-660e112eb3f5" formName="Antecedentes" formEncounterType="83413734-587d-11e4-af12-660e112eb3f5" formVersion="0.1">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Personal record form in spanish for the NTDHealth implementation">
+    <meta name="keywords" content="Personal record, OpenMRS, NTDHealth, HTML Form">
+    <meta name="author" content="Program for Study and Control of Tropical Diseases -PECET, University of Antioquia, Colombia">
+  </head>
+  
+  <style type="text/css">
+  <ifMode mode="VIEW" include="false">
+  
+    #data-collection {
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+    }
+
+    #vital-personal {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+    }
+
+    #general-personal {
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+    }            
+
+  </ifMode>
+  </style>
+
+    <h1>Antecedentes</h1>
+    <p>En este formulario se guardará información de antecedentes previos que tenga el paciente o sus familiares</p>
+    <p></p>
+
+    <div id="general-personal">
+        <p class="left">
+            <h2>Fecha</h2>
+            <encounterDate default="now"/>
+        </p>
+    </div>
+
+    <div id="general-personal">
+        <p class="left">
+            <h2>Lugar de la consulta</h2>
+            <encounterLocation default="SessionAttribute:emrContext.sessionLocationId"/>
+        </p>
+    </div>
+
+    <div id="general-personal">
+        <p class="left">
+            <h2>Profesional</h2>
+            <encounterProvider default="currentUser" required="true"/>
+        </p>
+    </div>
+    <p></p>
+
+
+    <!--################### PERSONAL RECORDS SECTION ########################-->
+
+    <section id="signsAndObs" sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Antecedentes Personales Generales">
+
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:163345" labelText="Hipertensión"/></p> <!-- NEW CONCEPT -->
+        <p><obs conceptId="CIEL:163346" labelText="Enfermedad Pulmonar Obstructiva Crónica"/></p> <!-- NEW CONCEPT -->
+        <p><obs conceptId="CIEL:112141" labelText="Tuberculosis"/></p>
+        <p><obs conceptId="CIEL:121375" labelText="Asma"/></p>
+        <p><obs conceptId="CIEL:161502" labelText="¿Se ha realizado una prueba de funcionamiento de la glándula tiroides?"/></p>
+          <br/>
+          <ul><obs conceptId="CIEL:161505" labelText="Valor prueba de hormona estimulante de la tiroides"/></UL>
+          <br/>
+          <ul><obs conceptId="CIEL:161504" labelText="Valor prueba de tiroxina"/></UL>
+          <br/>
+          <ul><obs conceptId="CIEL:161503" labelText="Valor prueba triyodotironina"/></ul>
+          <br/>      
+        <p><obs conceptId="CIEL:120198" labelText="Complicaciones quirúrgicas"/></p>
+        <p><obs conceptId="CIEL:163347" labelText="Alergia medicamentosa"/></p> <!-- NEW CONCEPT -->
+        <p><obs conceptId="CIEL:148826" labelText="Alergia a anestésico"/></p>
+        <p><obs conceptId="CIEL:1871" labelText="Transfusiones"/></p>
+        <p><obs conceptId="CIEL:114088" labelText="Intoxicaciones"/></p>
+        <p><obs conceptId="CIEL:158312" labelText="Terapia con inmunosupresores"/></p>
+        <p><obs conceptId="CIEL:151286" labelText="Cancer (maligno)"/></p>
+    </div>
+    
+    </section>
+    <p></p>
+
+    <!--################### PREVIOUS SECTION INFECTION ########################-->
+    <section id="signsAndObs" sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Infecciones Previas">
+    
+    <div id="vital-personal">
+      <p><obs conceptId="CIEL:142592" labelText="Dengue"/></p>
+    </div>
+    
+    <div id="vital-personal">
+      <p><obs conceptId="CIEL:120742" labelText="Chikungunya"/></p>
+    </div>
+    
+    <div id="vital-personal">
+      <p><obs conceptId="CIEL:122746" labelText="Zika"/></p>
+    </div>
+
+    </section>
+    <p></p>
+
+
+    <!--################### FEMENINE PERSONAL RECORD SECTION ########################-->
+    <section id="signsAndObs" sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Antecedentes Personales para Mujeres">
+    
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:5272" labelText="¿Se encuentra embarazada?"/></p>
+    </div>
+    
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:5624" labelText="En caso afirmativo, este es su embarazo número:"/></p>
+    </div>
+    
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:162849" labelText="¿Tiene probabilidad de quedar embarazada?"/></p>
+    </div>
+    
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:163348" labelText="¿Ha tenido controles prenatales?"/></p> <!-- NEW CONCEPT -->
+    </div>
+    <br/>
+    
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:1425" labelText="¿Cuántos controles?"/></p>
+    </div>
+    
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:159617" labelText="Se realizó ecografías durante el embarazo?"/></p>
+    </div>
+    
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:163349" labelText="En caso afirmativo, describir hallazgos"/></p> <!-- NEW CONCEPT -->
+    </div>
+
+    
+    <h2><br> Enfermedades durante el embarazo actual</br></h2>
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:115910" labelText="Diabetes Mellitus Materna"/></p>
+    </div>
+    
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:47" labelText="Hipertensión asociada al embarazo"/></p>
+    </div>
+    
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:129251" labelText="Preeclampsia"/></p>
+    </div>
+    
+    <div id="vital-personal">
+      <p><obs conceptId="CIEL:5355" labelText="Infección por toxoplasmosis"/>
+        <ul><br><obs conceptId="CIEL:161522" labelText="Anticuerpos IgG"/></br></ul>
+        <ul><br><obs conceptId="CIEL:161523" labelText="Anticuerpos IgM"/></br></ul> 
+      </p>
+    </div> 
+    
+    <div id="vital-personal">
+      <p><obs conceptId="CIEL:142963" labelText="Infección por citomegalovirus"/>
+        <ul><br><obs conceptId="CIEL:161526" labelText="Citomegalovirus IgG"/></br></ul>
+        <ul><br><obs conceptId="CIEL:161527" labelText="Citomegalovirus IgM"/></br></ul>
+      </p>
+    </div> 
+
+    <div id="vital-personal">
+      <p><obs conceptId="CIEL:113205" labelText="Infección por rubeola"/>
+        <ul><br><obs conceptId="CIEL:161524" labelText="Rubéola IgG"/></br></ul>
+        <ul><br><obs conceptId="CIEL:161525" labelText="Rubéola IgM"/></br></ul>
+      </p>
+    </div> 
+
+    <div id="vital-personal">
+      <p><obs conceptId="CIEL:138706" labelText="Infección por Herpes Simplex"/></p>
+        <ul><br><obs conceptId="CIEL:161528" labelText="Herpes simplex IgM"/></br></ul>
+        <ul><br><obs conceptId="CIEL:161529" labelText="Herpes simplex IgG"/></br></ul>
+    </div>
+
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:299" labelText="Prueba de sífilis"/></p>
+    </div>
+
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:1169" labelText="Infección por VIH"/></p>
+    </div>
+
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:160666" labelText="¿Consume actualmente medicamentos?"/></p>
+    </div>
+
+
+    <div id="vital-personal">        
+      <p>¿Ha tomado alguno de estos medicamentos en el embarazo actual?"/></p> 
+      <br/>
+      
+      <ul>
+      <obsgroup groupingConceptId="CIEL:159367">          
+        <obs conceptId="CIEL:1193" labelText="Seleccione un medicamento:"/>
+        <obs conceptId="CIEL:1444"  labelText="Concentración"/>
+        <obs conceptId="CIEL:162384" answerLabel=""/>
+        <obs conceptId="CIEL:160855" labelText="Frecuencia"/>
+        <obs conceptId="CIEL:159368" labelText="Duración del tratamiento"/>
+        <obs conceptId="CIEL:1732" labelText=""/>
+      </obsgroup>
+      </ul>
+      <br/>
+      <br/>
+      
+      <ul>
+      <obsgroup groupingConceptId="CIEL:159367">
+        <obs conceptId="CIEL:1193" labelText="Seleccione un medicamento:"/>
+        <obs conceptId="CIEL:1444"  labelText="Concentración"/>
+        <obs conceptId="CIEL:162384" answerLabel=""/>
+        <obs conceptId="CIEL:160855" labelText="Frecuencia"/>
+        <obs conceptId="CIEL:159368" labelText="Duración del tratamiento"/>
+        <obs conceptId="CIEL:1732" labelText=""/>
+      </obsgroup>
+      </ul>
+      <br/>
+      <br/>
+
+      <ul>
+      <obsgroup groupingConceptId="CIEL:159367">
+        <obs conceptId="CIEL:1193" labelText="Seleccione un medicamento:"/>
+        <obs conceptId="CIEL:1444"  labelText="Concentración"/>
+        <obs conceptId="CIEL:162384" answerLabel=""/>
+        <obs conceptId="CIEL:160855" labelText="Frecuencia"/>
+        <obs conceptId="CIEL:159368" labelText="Duración del tratamiento"/>
+        <obs conceptId="CIEL:1732" labelText=""/>
+      </obsgroup>
+      </ul>
+    </div>
+    
+    <h2><br>Antecedentes en embarazos previos</br></h2>
+    <div id="vital-personal">
+      <p><obs conceptId="CIEL:151743" labelText="Abortos"/></p>
+      <ul><br><obs conceptId="CIEL:1823" labelText="En caso afirmativo, ¿cuántos?"/></br></ul>
+    </div>
+
+    <div id="vital-personal">
+        <p><obs conceptId="CIEL:113841" labelText="Hijos prematuros"/></p>
+    </div>
+
+    <div id="vital-personal">
+    <obsgroup groupingConceptId="CIEL:124253">
+      <p><obs conceptId="CIEL:1729" labelText="Malformaciones"/></p>
+      <ul><br><obs conceptId="CIEL:160632" labelText="En caso afirmativo, ¿cuáles?"/></BR></UL>
+    </obsgroup>
+    </div>
+
+    </section>
+    <p></p>
+
+    <!--################### FAMILY PERSONAL RECORD SECTION ########################-->
+    <section id="signsAndObs" sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Antecedentes Familiares">
+    <div id="vital-personal">
+      <p>
+      <obsgroup groupingConceptId="CIEL:140231">
+        <obs conceptId="CIEL:1729"  labelText="Cardiovasculares"/> 
+        <obs conceptId="CIEL:1560" labelText="En caso afirmativo, ¿quién los presenta?"/>
+      </obsgroup>
+      </p>        
+    </div>
+
+    <div id="vital-personal">
+      <p>
+      <obsgroup groupingConceptId="CIEL:119137">
+        <obs conceptId="CIEL:1729"  labelText="Pulmonares"/> 
+        <obs conceptId="CIEL:1560" labelText="En caso afirmativo, ¿quién los presenta?"/>
+      </obsgroup>
+      </p> 
+    </div>
+    
+    <div id="vital-personal">
+      <p>
+      <obsgroup groupingConceptId="CIEL:140225">
+        <obs conceptId="CIEL:1729"  labelText="Gastrointestinales"/> 
+        <obs conceptId="CIEL:1560" labelText="En caso afirmativo, ¿quién los presenta?"/>
+      </obsgroup>
+      </p> 
+    </div>    
+
+    <div id="vital-personal">
+      <p>
+      <obsgroup groupingConceptId="CIEL:140228">
+        <obs conceptId="CIEL:1729"  labelText="Diabetes Mellitus (DM)"/> 
+        <obs conceptId="CIEL:1560" labelText="En caso afirmativo, ¿quién los presenta?"/>
+      </obsgroup>
+      </p> 
+    </div>    
+
+    <div id="vital-personal">
+      <p>
+      <obsgroup groupingConceptId="CIEL:152460">
+        <obs conceptId="CIEL:1729"  labelText="Tuberculosis"/> 
+        <obs conceptId="CIEL:1560" labelText="En caso afirmativo, ¿quién los presenta?"/>
+      </obsgroup>
+      </p> 
+    </div>
+
+    <div id="vital-personal">
+      <p>
+      <obsgroup groupingConceptId="CIEL:140527">
+        <obs conceptId="CIEL:1729"  labelText="Renales"/> 
+        <obs conceptId="CIEL:1560" labelText="En caso afirmativo, ¿quién los presenta?"/>
+      </obsgroup>
+      </p> 
+    </div>
+
+    <div id="vital-personal">
+      <p>
+      <obsgroup groupingConceptId="CIEL:152459">
+        <obs conceptId="CIEL:1729"  labelText="Enfermedades de la tiroides"/> 
+        <obs conceptId="CIEL:1560" labelText="En caso afirmativo, ¿quién los presenta?"/>
+      </obsgroup>
+      </p> 
+    </div>
+
+    <div id="vital-personal">
+      <p>
+      <obsgroup groupingConceptId="CIEL:152459">
+        <obs conceptId="CIEL:1729"  labelText="Cancer"/> 
+        <obs conceptId="CIEL:1560" labelText="En caso afirmativo, ¿quién los presenta?"/>
+      </obsgroup>
+      </p> 
+    </div>
+
+    </section>
+    <p></p>
+
+    <submit/>
+</htmlform>

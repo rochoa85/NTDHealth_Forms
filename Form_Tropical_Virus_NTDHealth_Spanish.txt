@@ -1,0 +1,215 @@
+﻿<htmlform formUuid="ab215dd2-59ff-11e4-af12-660e112eb3f5" formName="Dengue" formEncounterType="83413734-587d-11e4-af12-660e112eb3f5" formVersion="0.1">
+ 
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Tropical virosis form in spanish for the NTDHealth implementation">
+    <meta name="keywords" content="Virosis, Tropical, Dengue, Chikungunya, Zika, OpenMRS, NTDHealth, HTML Form">
+    <meta name="author" content="Program for Study and Control of Tropical Diseases -PECET, University of Antioquia, Colombia">
+  </head>
+  
+  <style type="text/css">
+  <ifMode mode="VIEW" include="false">
+  
+    #data-collection {
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+    }
+
+    #vital-personal {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+    }
+
+    #general-personal {
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+    }            
+
+  </ifMode>
+  </style>
+
+    <h1>Formulario para Virosis Tropicales</h1>
+    <p>En este formulario podrá reportar los síntomas al igual que el examen físico de pacientes febriles con sospecha de estar infectados con alguna virosis tropical como Zika, Chikungunya o Dengue</p>
+
+
+    <div id="vital-personal">
+        <p class="left">
+            <h2>Fecha</h2>
+            <encounterDate default="now"/>
+        </p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <h2>Lugar de la consulta</h2>
+            <encounterLocation default="SessionAttribute:emrContext.sessionLocationId"/>
+        </p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <h2>Profesional</h2>
+            <encounterProvider default="currentUser" required="true"/>
+        </p>
+    </div>
+    <p></p>
+
+
+    <!--################### VITALS SECTION ########################-->
+    <section id="signsAndObs" sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Examen Físico">
+    <p></p>
+    <h2>Cabeza y cuello</h2>
+    
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:136443" labelText="Ictericia"/></p>
+    </div>
+    
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:142630" labelText="Deshidratación"/></p>
+    </div>
+
+    <p></p>
+    <h2>Piel</h2>
+
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:130324" labelText="Petequias"/></p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:141559" labelText="Equimosis"/></p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:143050" labelText="Cianosis"/></p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:512" labelText="Erupción cutánea"/></p>
+    </div>
+
+    <p></p>
+    <h2>Cardio/Pulmón</h2>
+
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:139063" labelText="Soplo cardíaco"/></p>
+    </div>
+    
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:120148" labelText="Arritmia"/></p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:122863" labelText="Sibilancias"/></p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:122864" labelText="Roncus"/></p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left">
+            <label>Saturación de oxigeno (%)</label>
+            <obs conceptId="CIEL:5092" id="o2_sat"/>
+        </p>
+    </div>
+
+    <p></p>
+    <h2>Abdomen</h2>
+
+
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:5009" labelText="Esplenomegalia"/></p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:136137" labelText="Hepatomegalia"/></p>
+    </div>
+
+    <div id="vital-personal">
+        <p class="left"><obs conceptId="CIEL:151" labelText="Dolor abdominal"/></p>
+    </div>
+
+    </section>
+    <p></p>
+
+    <!--################### SYMPTOMS SECTION ########################-->
+    <section id="symptoms" sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Sintomatología">
+        <table>
+            <repeat>
+                <template>
+                    <tr>
+                        <td class="symptom">
+                            <obs conceptId="{concept}" answerConceptId="{concept}" labelText=""/>
+                        </td>
+                    </tr>
+                </template>
+ 
+                <render concept="CIEL:133632"/><!-- Mialgias -->
+                <render concept="CIEL:80"/> <!-- Artralgias -->
+                <render concept="CIEL:139084"/> <!-- Cefaleas -->
+                <render concept="CIEL:512"/> <!-- Rash -->
+                <render concept="CIEL:122983"/> <!-- Emesis -->
+                <render concept="CIEL:122496"/> <!-- Disnea -->
+                <render concept="CIEL:151"/> <!-- Dolor abdominal -->
+                <render concept="CIEL:147241"/> <!-- Sangrado -->
+                <render concept="CIEL:1467"/> <!-- Diarrea por menos de un mes -->
+                <render concept="CIEL:141762"/> <!-- Somnolencia -->
+                <render concept="CIEL:6023"/> <!-- Irritabilidad -->
+                <render concept="CIEL:140987"/> <!-- HT ortostática -->
+                <render concept="CIEL:132418"/> <!-- Oliguria -->
+                <render concept="CIEL:5226"/> <!-- Debilidad -->
+                <render concept="CIEL:140501"/> <!-- Fatiga -->
+                <render concept="CIEL:141584"/> <!-- Dolor de Oido -->
+                <render concept="CIEL:146097"/> <!-- Rinorrea catarral (Congestion nasal) -->
+                <render concept="CIEL:125225"/> <!-- Odinofagia -->
+                <render concept="CIEL:143264"/> <!-- Tos -->
+                <render concept="CIEL:1004"/> <!-- Expectoración -->
+                <render concept="CIEL:996"/> <!-- Constipación -->
+                <render concept="CIEL:148346"/> <!-- Ascitis -->
+                <render concept="CIEL:143050"/> <!-- Cianosis -->
+                <render concept="CIEL:136443"/> <!-- Ictericia -->
+                <render concept="CIEL:135595"/> <!-- Perdida del apetito -->
+                <render concept="CIEL:147059"/> <!-- Dolor en los huesos -->
+                <render concept="CIEL:141559"/> <!-- Equimosis -->
+                <render concept="CIEL:162668"/> <!-- Sitio de sangrado -->
+            </repeat>
+        </table>
+
+        <p>
+            <label>Otros síntomas (lista)</label>
+            <obs conceptId="CIEL:1728" answerClasses="Symptom,Diagnosis,Finding" style="autocomplete"/>
+        </p>
+    </section>
+
+    <!--################### FINAL NOTES SECTION ########################-->
+    <section id="symptoms" sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Notas Finales">        
+        <p></p>
+        <h2>Impresión Diagnóstica</h2>
+
+        <div id="vital-personal">
+            <p class="left"><obs conceptId="CIEL:140238" labelText="Fiebre inespecífica"/></p>
+        </div>
+
+        <div id="vital-personal">
+            <p class="left"><obs conceptId="163365" labelText="Dengue - Sx Alarma"/></p>
+        </div>
+
+        <div id="vital-personal">
+            <p class="left"><obs conceptId="163366" labelText="Dengue + Sx Alarma"/></p>
+        </div>
+
+        <p></p>
+        <div id="data-collection">
+            <p>
+                <h2>Análisis y Plan</h2>
+                <obs conceptId="CIEL:162169" style="textarea" rows="5" cols="50"/>
+            </p>
+        </div>
+    </section>
+    <p></p>
+    <submit/>
+
+</htmlform>
