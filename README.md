@@ -9,6 +9,6 @@ Right now there are three forms related with:
 
 The forms are in spanish (the labels), but all the concepts are associated to the CIEL dictionary.
 
-Novel concepts were also included, and a excel table is available with all the details
+Novel concepts are also included, and a excel table is available with all the details
 
 Any information please contact us through the website [here](http:ubmc-pecet.udea.edu.co/ntdhealth)
